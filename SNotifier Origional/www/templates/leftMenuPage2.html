@@ -1,0 +1,116 @@
+<style>
+    .popup-body {
+  background:white
+}
+  /*.bar.bar-stable {
+    background-color: #cfd1d2 !important;
+  }
+
+  .hero {
+    background-color: #cfd1d2 !important;
+  }*/
+
+  #txtMessage {
+    text-align: center;
+  }
+</style>
+  
+<style>
+  .NewButtonClass {
+    background-color: #853a96;
+    border: 4px solid #ffffff;
+    border-radius: 30px;
+  }
+  .card .card-action {
+    border-top: none;
+   
+  }
+
+  input {
+    font-size: 30px !important;
+    border: 1px solid !important;
+  }
+
+</style>
+<ion-content class="has-header menu-panel center">
+
+    <div ng-if="barcode">
+        <form>
+            <div class="card">
+                <div class="card-header">
+                   <!-- <span class="card-title">Subscribe</span>-->
+                  <!--  <span class="card-subtitle">Barcode: {{barcode}}</span>-->
+                </div>
+                <br />
+                <div class="card-body-text">
+                    <!--<span>
+                        Please fill the required information
+                        <br>
+                        {{message}}
+                    </span>
+                    <br />-->
+
+                  <div class="card-image padding-10">
+                    <img src="img/AlertAppImages/Ticket with number highlighted.png" />
+                  </div>
+
+                    <div class="padding-10">
+                        <div class="form-required">
+                            <input id="txtMessage" type="text" class="form-control" 
+                                    ng-model="ticket.number" 
+                                    placeholder="Enter Ticket No" 
+                                    autofocus required />
+                        </div>
+
+                      <!--<div class="list form-required">
+                        <label class="item item-input">
+                          <span class="input-label">Enter Ticket No</span>
+                          <input id="txtMessage" type="text" class="form-control"
+                                 ng-model="ticket.number" autofocus required />
+                        </label>
+
+                      </div>-->
+
+                    </div>
+                </div>
+                <!--<div class="card-action">
+                    <button type="submit" class="btn btn-flat" ng-disabled="!ticket.number" ng-click="subscribe()">Go</button>
+                </div>-->
+              <button full="" type="submit" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-full button-full-ios NewButtonClass"
+                      ng-disabled="!ticket.number" ng-click="subscribe()">
+                <span class="button-inner" style="color:#ffffff">Go</span>
+                <div class="button-effect">
+                </div>
+              </button>
+
+
+
+
+
+            </div>
+        </form>
+    </div>
+    <div ng-if="!barcode">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Go</span>
+            </div>
+            <br />
+            <div class="card-body-text">
+                <span>
+                    Please scan the barcode on Ticket first.
+                </span>
+            </div>
+            <br />
+            <div class="card-action">
+                <button class="btn btn-flat" ng-click="back()">Back</button>
+            </div>
+        </div>
+    </div>
+
+  
+  
+
+</ion-content>
+
+

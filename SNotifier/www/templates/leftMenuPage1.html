@@ -1,0 +1,70 @@
+<style>
+  .NewButtonClass {
+    background-color: #853a96;
+    border: 4px solid #ffffff;
+    border-radius: 30px;
+  }
+  .card .card-action {
+    border-top: none;
+   
+  }
+</style>
+
+
+
+
+<ion-content class="has-header menu-panel center">
+    <!--<parallax theme="parallaxTheme" data="parallaxData" events="parallaxEvents"></parallax>-->
+
+    <div class="card" ng-if="gcmToken">
+        <!--<div class="card-header">
+            <span class="card-title">Scan Your Ticket</span>
+            <span class="card-subtitle">Using your Mobile Camera</span>
+        </div>-->
+        <br />
+        <div class="card-body-text">
+            <!--<span>
+                Please scan the barcode on your Ticket.
+            </span>-->
+            <div class="card-image padding-10">
+              <img src="img/AlertAppImages/Ticket with barcode highlighted.png" />
+            </div>
+        </div>
+        <br />
+  <!--    <button ion-button block>Block Button</button>-->
+        <div> <!--class="card-action NewButtonClass"-->
+           
+           <!-- <button ion-button block  ng-click="scan()">SCAN</button>-->
+          <button full="" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-full button-full-ios NewButtonClass"  ng-click="scan()">
+            <span class="button-inner" style="color:#ffffff">SCAN</span>
+            <div class="button-effect">
+            </div>
+          </button>
+        </div>
+    </div>
+
+    <div ng-if="!gcmToken">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Scan Your Ticket</span>
+            </div>
+            <br />
+            <div class="card-body-text">
+                <span>
+                    Unable to fetch Token, please try again.
+                </span>
+                <br />
+            </div>
+        </div>
+    </div>
+  
+    <!--<ion-content>
+      <button ng-click="showPopup('shahbaz')" class="button icon ion-edit">Show Popup</button>
+
+    </ion-content>-->
+
+
+
+  
+
+</ion-content>
